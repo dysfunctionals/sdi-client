@@ -1,6 +1,6 @@
 import socketIo from 'socket.io-client';
 
-export const socket = socketIo('localhost:8080/client', {
+export const socket = socketIo('10.14.200.134:8080/client', {
   path: '/socket'
 });
 
