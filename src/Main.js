@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./styles.scss";
 import NameForm from "./NameForm";
+import PowerController from "./Controllers/PowerController"
  
 class Main extends Component {
 
@@ -36,6 +37,7 @@ class Main extends Component {
           </ul>
           <div className="content">
           <NameForm/>
+          <PowerController/>
           
           {/* <h3>Choose your color!</h3>
           <SwatchesPicker 
