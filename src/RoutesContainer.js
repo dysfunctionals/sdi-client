@@ -5,7 +5,7 @@ import { Route, Switch } from 'react-router-dom';
 import { socketListener } from './Socket';
 
 import Main from './Main';
-import Controller from './Controller';
+import MainController from './Controllers/MainController';
 
 class RoutesContainer extends React.Component {
 
@@ -28,7 +28,7 @@ class RoutesContainer extends React.Component {
         <Switch>
           <Route exact path='/' component={Main} />
           {/* <Route path='/full' component={FullGame} />*/}
-          <Route path='/game/:shipId/:role' component={Controller} />
+          <Route path='/game/:shipId/:role' component={MainController} />
         </Switch>
     );
   }

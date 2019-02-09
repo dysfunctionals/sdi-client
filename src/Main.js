@@ -36,6 +36,7 @@ class Main extends Component {
           </ul>
           <div className="content">
           <NameForm/>
+          
           {/* <h3>Choose your color!</h3>
           <SwatchesPicker 
           color={this.state.color}
