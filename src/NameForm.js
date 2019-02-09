@@ -1,11 +1,8 @@
 import React, { Component } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import openSocket from 'socket.io-client';
 
-const socket = openSocket('localhost:8080/client', {
-    path: '/socket'
-});
+import { socket } from './Socket';
 
 function ValidName(props) {
     if (props.name.length === 2 && props.name.match(/[a-zA-Z]/g)) return <h3>The name is valid</h3>

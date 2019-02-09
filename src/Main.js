@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import "./styles.scss";
 import NameForm from "./NameForm";
-import EnterButton from "./EnterButton"
-import { SwatchesPicker } from 'react-color';
-import openSocket from 'socket.io-client';
  
 class Main extends Component {
 
