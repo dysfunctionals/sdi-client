@@ -53,6 +53,7 @@ class NameForm extends Component {
                         block
                         onClick={this.handleSubmit}>Join the game</Button>
                     <ValidName name={this.state.name} />
+                
                 </Form.Group>
 
             </Form>

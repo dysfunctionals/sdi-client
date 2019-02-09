@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import "./styles.scss";
 import NameForm from "./NameForm";
-import EnterButton from "./EnterButton"
-import { SwatchesPicker } from 'react-color';
-import openSocket from 'socket.io-client';
- 
+import ShieldsController from "./Controllers/ShieldsController"
+import PowerController from "./Controllers/PowerController"
 class Main extends Component {
 
   constructor(props){
@@ -39,6 +37,9 @@ class Main extends Component {
           </ul>
           <div className="content">
           <NameForm/>
+          <ShieldsController/>
+          <PowerController/>
+          
           {/* <h3>Choose your color!</h3>
           <SwatchesPicker 
           color={this.state.color}
