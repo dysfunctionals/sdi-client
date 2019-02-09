@@ -21,16 +21,14 @@ class NameForm extends Component {
     }
 
     handleSubmit(event) {
-        socket.emit('NAME_SELECTION','Goje Dan')
-        if (this.state.name.length === "")
-            return <div><h3>Not big enough</h3></div>
-        //socket.emit('NAME_SELECTION',"Goje DAN")
-        console.log("NAME IS"+this.state.name)
+        // Emit name on button click
+        if (this.state.name && this.state.name.length === 2 && this.state.name.match(/[a-zA-Z]/g))
+            socket.emit('NAME_SELECTION', this.state.name)
     }
 
     handleChange(event) {
         this.setState({ name: event.target.value });
-       // console.log(event.target.value)
+        // console.log(event.target.value)
     }
 
     render() {
