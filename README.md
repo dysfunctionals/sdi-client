@@ -1,6 +1,9 @@
-# sdi-display
+# sdi-client
+## About
+A node.js-based client developed for use on all browsers on all platforms.
 
+## Installation
 - `npm install`
 - `npm run start`
 
-remember to point at correct server
+Remember to point at the correct server
