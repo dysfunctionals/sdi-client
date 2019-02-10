@@ -83,8 +83,8 @@ class PowerController extends Component {
       const objectToSend = {
         ship: this.props.match.params.shipId,
         engine: Sliders[0],
-        shields: Sliders[1],
-        weapons: Sliders[2]
+        shields: Sliders[2],
+        weapons: Sliders[1]
       }
       // console.log(objectToSend)
       socket.emit("POWER_CHANGED", objectToSend)
