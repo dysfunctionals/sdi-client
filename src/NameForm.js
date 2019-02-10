@@ -40,6 +40,7 @@ class NameForm extends Component {
                         placeholder="Enter Initials"
                         maxLength="2"
                         onChange={this.handleChange}
+                        onSubmit={this.handleSubmit}
                     />
                     <Form.Text className="text-muted">
                         Enter two characters as your initials!
