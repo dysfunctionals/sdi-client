@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import Slider, { Range } from 'rc-slider';
-
+import Slider from 'rc-slider';
 
 import 'rc-slider/assets/index.css';
 import { socket } from '../Socket';
@@ -30,9 +29,7 @@ const ShipGiven = ({ shipId }) => {
 class PowerController extends Component {
 
   constructor(props) {
-
     super(props);
-
     this.state = {
       max: 100,
       min: 0,
@@ -105,7 +102,6 @@ class PowerController extends Component {
             defaultValue={33}
             value={this.state.Sliders[0]}
             onChange={this.handleValuesChange(0).bind(this)}
-
           />
           <Image src={power} fluid />
           <Slider
@@ -125,7 +121,6 @@ class PowerController extends Component {
           <ShipGiven shipId={this.props.match.params.shipId} />
         </center>
       </div>
-
     );
   }
 

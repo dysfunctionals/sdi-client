@@ -1,7 +1,6 @@
 import socketIo from 'socket.io-client';
-import { encode } from 'punycode';
-
-export const socket = socketIo('localhost:8080/client', {
+import { apiUrl } from './config/settings'
+export const socket = socketIo(`${apiUrl}/client`, {
   path: '/socket'
 });
 
