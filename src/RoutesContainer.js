@@ -25,7 +25,7 @@ class RoutesContainer extends React.Component {
     return (
         <Switch>
           <Route exact path='/' component={Main} />
-          <Route path='/full' component={FullGame} />
+          {/*<Route path='/full' component={FullGame} />*/}
           <Route path='/game/:shipId/:role' component={MainController} />
         </Switch>
     );
