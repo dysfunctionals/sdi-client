@@ -32,12 +32,15 @@ class Main extends Component {
   
     return (
         <div>
-          <h1>Front-end</h1>
+          <center>
+          <h2>strategic defence initiative</h2>
+          <h1></h1>
+          <p>Strategic defence initiative is a team-based experience for 16 people. Every person has a specific role on the ship.Teamwork is the key to winning the game and conquering the universe</p>
           <ul className="header">
           </ul>
           <div className="content">
           <NameForm/>
-          <PowerController/>
+         { /*<PowerController/> *
           
           {/* <h3>Choose your color!</h3>
           <SwatchesPicker 
@@ -46,6 +49,7 @@ class Main extends Component {
            width="100%"/> */}
      
           </div>
+          </center>
         </div>
     );
   }

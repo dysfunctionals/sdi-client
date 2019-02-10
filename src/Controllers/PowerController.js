@@ -1,12 +1,36 @@
 import React, { Component } from 'react'
 import Slider, { Range } from 'rc-slider';
 
+
 import 'rc-slider/assets/index.css';
 import { socket } from '../Socket';
+import { Image } from 'react-bootstrap'
+import engine from '../assets/eng.png'
+import power from '../assets/pow.png'
+import shields from '../assets/shields.png'
+import ship0 from "../assets/0.png"
+import ship1 from "../assets/1.png"
+import ship2 from "../assets/2.png"
+import ship3 from "../assets/3.png"
+
+
+const ShipGiven = ({ shipId }) => {
+  console.log(shipId)
+  if (shipId == 0) {
+    return <Image src={ship0} fluid />
+  } else if (shipId == 1) {
+    return <Image src={ship1} fluid />
+  } else if (shipId == 2) {
+    return <Image src={ship2} fluid/>
+  }   else if (shipId == 3) {
+    return <Image src={ship3} fluid/>
+  }
+};
 
 class PowerController extends Component {
 
   constructor(props) {
+
     super(props);
 
     this.state = {
@@ -16,9 +40,12 @@ class PowerController extends Component {
         34,
         33,
         33
-      ]
+      ],
+
     };
   }
+
+
 
   handleValuesChange(id) {
     return (value) => {
@@ -48,49 +75,55 @@ class PowerController extends Component {
         const filteredLength = Sliders.filter((val, key) => val > 0 && key != Number(id)).length
         for (let i in Sliders) {
           if (i != id && Sliders[Number(i)] > 0) {
-            Sliders[Number(i)] = Sliders[Number(i)]+remainder / filteredLength
+            Sliders[Number(i)] = Sliders[Number(i)] + remainder / filteredLength
           }
         }
       }
 
 
-      console.log(this.props.match.params)
+      // console.log(this.props.match.params)
 
       const objectToSend = {
-        ship:this.props.match.params.shipId,
-        engine:Sliders[0],
-        shields:Sliders[1],
-        weapons:Sliders[2]        
+        ship: this.props.match.params.shipId,
+        engine: Sliders[0],
+        shields: Sliders[1],
+        weapons: Sliders[2]
       }
-      socket.emit("POWER_CHANGED",objectToSend)
+      // console.log(objectToSend)
+      socket.emit("POWER_CHANGED", objectToSend)
       this.setState({ Sliders });
     };
   }
 
-
-
   render() {
     return (
-      <div>
-        <Slider
-          className='Slider 1'
-          defaultValue={33}
-          value={this.state.Sliders[0]}
-          onChange={this.handleValuesChange(0).bind(this)}
+      <div >
+        <center>
+          <Image src={engine} fluid />
+          <Slider
+            className='Slider 1'
+            defaultValue={33}
+            value={this.state.Sliders[0]}
+            onChange={this.handleValuesChange(0).bind(this)}
 
-        />
-        <Slider
-          className='Slider 2'
-          defaultValue={33}
-          value={this.state.Sliders[1]}
-          onChange={this.handleValuesChange(1).bind(this)}
-        />
-        <Slider
-          className='Slider 3'
-          defaultValue={33}
-          value={this.state.Sliders[2]}
-          onChange={this.handleValuesChange(2).bind(this)}
-        />
+          />
+          <Image src={power} fluid />
+          <Slider
+            className='Slider 2'
+            defaultValue={33}
+            value={this.state.Sliders[1]}
+            onChange={this.handleValuesChange(1).bind(this)}
+          />
+          <Image src={shields} fluid />
+          <Slider
+            className='Slider 3'
+            defaultValue={33}
+            value={this.state.Sliders[2]}
+            onChange={this.handleValuesChange(2).bind(this)}
+          />
+          <h3>Your ship</h3>
+          <ShipGiven shipId={this.props.match.params.shipId} />
+        </center>
       </div>
 
     );
