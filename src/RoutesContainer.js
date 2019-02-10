@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Route, Switch } from 'react-router-dom';
 import { socketListener } from './Socket';
+import FullGame from './FullGame'
 import Main from './Main';
 import MainController from './Controllers/MainController';
 
@@ -18,6 +19,7 @@ class RoutesContainer extends React.Component {
 
   changeRedirectPath(path) {
     const { router } = this.context;
+    console.log('path recieved', path)
     router.history.push(path);
   }
 
@@ -25,7 +27,7 @@ class RoutesContainer extends React.Component {
     return (
         <Switch>
           <Route exact path='/' component={Main} />
-          {/*<Route path='/full' component={FullGame} />*/}
+          <Route path='/full' component={FullGame} />
           <Route path='/game/:shipId/:role' component={MainController} />
         </Switch>
     );

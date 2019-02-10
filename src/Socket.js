@@ -11,9 +11,12 @@ export const socketListener = () => {
       resolve('/');
     });
     socket.on('GAME_FULL', () => {
+    
+      console.log('socket listener full', "full")
       resolve('/full');
     });
     socket.on('ROLE_SELECTED', (encodedRoleData) => {
+      console.log('socket listener role data', encodedRoleData)
       const roleData = JSON.parse(encodedRoleData);
       resolve(`/game/${roleData.ship}/${roleData.role}`);
     });
