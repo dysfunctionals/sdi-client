@@ -1,4 +1,5 @@
 @import "styles/variables.scss";
+<link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/8bit-wonder" type="text/css"/>
 
 h1 {
     color: $primaryColor !important;
@@ -13,6 +14,7 @@ body {
 div {
   align-self: auto !important;
   align-content: center !important;
+  
 }
 
 .EnterButton {

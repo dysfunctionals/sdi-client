@@ -37,7 +37,7 @@ class Main extends Component {
           </ul>
           <div className="content">
           <NameForm/>
-          <PowerController/>
+         { /*<PowerController/> *
           
           {/* <h3>Choose your color!</h3>
           <SwatchesPicker 
