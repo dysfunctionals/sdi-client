@@ -54,8 +54,10 @@ const containerStyle = {
     position: 'relative',
     height: '350px',
     width: '100%',
-    background: 'linear-gradient(to right, #E684AE, #79CBCA, #77A1D3)'
+    background: 'linear-gradient(to right, #c31432, #240b36)'
 }
+
+//#c31432#240b36
 
 class AimController extends Component {
 

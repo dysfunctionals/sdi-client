@@ -32,7 +32,10 @@ class Main extends Component {
   
     return (
         <div>
-          <h1>Front-end</h1>
+          <center>
+          <h2>strategic defence initiative</h2>
+          <h1></h1>
+          <p>Strategic defence initiative is a multiplayer game for 16 people. Every person has a specific role on the ship.Teamwork is the key to winning the game and conquering the infinite space</p>
           <ul className="header">
           </ul>
           <div className="content">
@@ -46,6 +49,7 @@ class Main extends Component {
            width="100%"/> */}
      
           </div>
+          </center>
         </div>
     );
   }

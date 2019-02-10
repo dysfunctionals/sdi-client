@@ -35,7 +35,7 @@ class NameForm extends Component {
                 onSubmit={e => this.handleSubmit(e)}
             >
                 <Form.Group controlId="formInitials">
-                    <Form.Label>Player's Initials</Form.Label>
+                   {/* <Form.Label>Player's Initials</Form.Label>*/}
                     <Form.Control type="text"
                         placeholder="Enter Initials"
                         maxLength="2"
