@@ -1,7 +1,7 @@
 import socketIo from 'socket.io-client';
 import { encode } from 'punycode';
 
-export const socket = socketIo('10.14.200.134:8080/client', {
+export const socket = socketIo('localhost:8080/client', {
   path: '/socket'
 });
 

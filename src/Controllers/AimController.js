@@ -77,7 +77,7 @@ class AimController extends Component {
             console.log(stick.angle.degree)
 
             const objectToSend = {
-                ship: this.props.match.params.ship,
+                ship: this.props.match.params.shipId,
                 role: this.props.match.params.role,
                 angle: stick.angle.degree,
                 on: 1
@@ -88,7 +88,7 @@ class AimController extends Component {
         manager.on('end', () => {
             console.log('I ended!')
             const objectToSend = {
-                ship: this.props.match.params.ship,
+                ship: this.props.match.params.shipId,
                 role: this.props.match.params.role,
                 angle: 0,
                 on: 0
