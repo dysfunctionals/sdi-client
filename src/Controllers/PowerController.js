@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Slider, { Range } from 'rc-slider';
 
 import 'rc-slider/assets/index.css';
-
+import { socket } from '../Socket';
 
 class PowerController extends Component {
 
@@ -23,16 +23,12 @@ class PowerController extends Component {
   handleValuesChange(id) {
     return (value) => {
 
-
-
-
       const Sliders = this.state.Sliders;
       Sliders[id] = value;
 
       const sum = Sliders.reduce((sum, value) => sum + value, 0);
       const diff = sum - 100;
       let remainder = 0
-
 
       for (let i in Sliders) {
         if (i != id) { //don't modify the slider which is being dragged
@@ -58,7 +54,15 @@ class PowerController extends Component {
       }
 
 
-      console.log(sum)
+      console.log(this.props.match.params)
+
+      const objectToSend = {
+        ship:this.props.match.params.ship,
+        engine:Sliders[0].toString,
+        shields:Sliders[1].toString,
+        weapons:Sliders[2].toString        
+      }
+      socket.emit("POWER_CHANGED",objectToSend)
       this.setState({ Sliders });
     };
   }
